@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrandBuzz Landing Page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orangeMain: "#f05a1a",
+              peach: "#fff1e8",
+              darkText: "#111827",
+              grayText: "#6b7280",
+              softBg: "#f8ffff",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: linear-gradient(135deg, #c9eeee, #eefafa);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.8s ease;
+      }
+
+      .fade-up.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      .dot {
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: #f05a1a;
+        opacity: 0.35;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .testimonial-track {
+        transition: transform 0.5s ease;
+      }
+
+      .footer-wave {
+        height: 55px;
+        background: #f05a1a;
+        border-radius: 100% 100% 0 0 / 50% 50% 0 0;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen py-8 px-3 text-darkText">
+    <main class="max-w-6xl mx-auto bg-white shadow-2xl overflow-hidden">
+      <!-- HEADER -->
+      <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+        <nav
+          class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between"
+        >
+          <a href="#" class="flex items-center gap-2 font-bold">
+            <span
+              class="w-8 h-8 bg-orangeMain rounded-xl flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-bullhorn text-sm"></i>
+            </span>
+            BrandBuzz
+          </a>
+
+          <div class="hidden md:flex items-center gap-9 text-sm font-medium">
+            <a href="#home" class="text-orangeMain">Home</a>
+            <a href="#about" class="hover:text-orangeMain">About Us</a>
+            <a href="#services" class="hover:text-orangeMain">Services</a>
+            <a href="#contact" class="hover:text-orangeMain">Contact Us</a>
+            <a href="#blog" class="hover:text-orangeMain">Blog</a>
+          </div>
+
+          <button
+            class="hidden md:block bg-orangeMain text-white px-5 py-2 rounded-lg text-sm shadow-md hover:scale-105 transition"
+          >
+            Sign Up
+          </button>
+
+          <button id="menuBtn" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden px-6 pb-5 space-y-4 text-sm font-medium"
+        >
+          <a href="#home" class="block text-orangeMain">Home</a>
+          <a href="#about" class="block">About Us</a>
+          <a href="#services" class="block">Services</a>
+          <a href="#contact" class="block">Contact Us</a>
+          <a href="#blog" class="block">Blog</a>
+          <button class="bg-orangeMain text-white px-5 py-2 rounded-lg">
+            Sign Up
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section
+        id="home"
+        class="relative max-w-5xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center fade-up"
+      >
+        <span class="dot left-5 top-20"></span>
+        <span class="dot left-14 top-32"></span>
+        <span class="dot right-20 bottom-12"></span>
+
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
+            We create <br />
+            <span class="text-orangeMain">solutions</span> for <br />
+            your business
+          </h1>
+
+          <p class="text-grayText max-w-md mb-7">
+            Our team keeps a keen eye on emerging trends and technologies to
+            ensure your marketing campaigns remain cutting-edge.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-5 sm:items-center">
+            <a
+              href="#contact"
+              class="bg-orangeMain text-white px-6 py-3 rounded-lg shadow-lg w-fit hover:scale-105 transition"
+            >
+              Get Started
+            </a>
+
+            <a
+              href="#services"
+              class="flex items-center gap-3 text-sm font-semibold"
+            >
+              <span
+                class="w-10 h-10 rounded-full shadow flex items-center justify-center text-orangeMain"
+              >
+                <i class="fa-solid fa-arrow-down"></i>
+              </span>
+              Explore more
+            </a>
+          </div>
+        </div>
+
+        <div class="relative h-80">
+          <div
+            class="absolute left-6 bottom-6 w-44 h-32 bg-[#c8a174] rounded-[50%]"
+          ></div>
+          <div
+            class="absolute right-6 bottom-10 w-48 h-36 bg-orangeMain rounded-[50%] opacity-80"
+          ></div>
+
+          <div class="absolute left-16 top-16 float">
+            <div class="text-7xl">👨‍💻</div>
+            <div
+              class="w-28 h-16 bg-white rounded-xl shadow-lg -mt-5 ml-12 flex items-center justify-center"
+            >
+              💻
+            </div>
+          </div>
+
+          <div
+            class="absolute right-20 top-10 float"
+            style="animation-delay: 1s"
+          >
+            <div class="text-7xl">🧑‍💼</div>
+            <div
+              class="w-32 h-16 bg-white rounded-xl shadow-lg -mt-5 flex items-center justify-center"
+            >
+              💻
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="max-w-5xl mx-auto px-6 py-16 fade-up">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold">
+            We Provide The Best <span class="text-orangeMain">Services</span>
+          </h2>
+          <p class="text-grayText text-sm mt-3 max-w-xl mx-auto">
+            Let us unleash the full potential of your business with our
+            data-driven strategies.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition"
+          >
+            <div
+              class="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center text-white mb-5"
+            >
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 class="font-bold mb-2">SEO/SEM</h3>
+            <p class="text-sm text-grayText mb-4">
+              Improve visibility and bring qualified traffic to your business.
+            </p>
+            <a class="text-xs font-semibold text-orangeMain">Read more</a>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white mb-5"
+            >
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h3 class="font-bold mb-2">Marketing</h3>
+            <p class="text-sm text-grayText mb-4">
+              Build smart campaigns that connect with the right audience.
+            </p>
+            <a class="text-xs font-semibold text-orangeMain">Read more</a>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition"
+          >
+            <div
+              class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-5"
+            >
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="font-bold mb-2">Viral Campaign</h3>
+            <p class="text-sm text-grayText mb-4">
+              Create strong campaigns that spread fast and drive growth.
+            </p>
+            <a class="text-xs font-semibold text-orangeMain">Read more</a>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 hover:-translate-y-2 transition"
+          >
+            <div
+              class="w-12 h-12 bg-orangeMain rounded-xl flex items-center justify-center text-white mb-5"
+            >
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <h3 class="font-bold mb-2">Others</h3>
+            <p class="text-sm text-grayText mb-4">
+              Flexible digital solutions built around your business needs.
+            </p>
+            <a class="text-xs font-semibold text-orangeMain">Read more</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIMPLE SOLUTIONS -->
+      <section class="bg-peach py-20 fade-up">
+        <div
+          class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center"
+        >
+          <div class="relative h-80">
+            <div
+              class="absolute left-12 bottom-8 w-48 h-40 bg-orangeMain rounded-3xl"
+            ></div>
+            <div class="absolute left-24 top-16 text-8xl float">🧑‍💻</div>
+            <div
+              class="absolute left-36 top-24 bg-white px-4 py-2 rounded-full shadow text-orangeMain"
+            >
+              <i class="fa-solid fa-comment-dots"></i>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-extrabold mb-4">
+              Simple <span class="text-orangeMain">Solutions!</span>
+            </h2>
+            <p class="text-grayText mb-8 max-w-md">
+              We understand that no two businesses are alike. That’s why we take
+              time to understand.
+            </p>
+
+            <div class="space-y-5 mb-8">
+              <div class="flex gap-4">
+                <span
+                  class="w-9 h-9 rounded-full bg-orangeMain text-white flex items-center justify-center font-bold"
+                  >1</span
+                >
+                <div>
+                  <h4 class="font-bold">Contact us</h4>
+                  <p class="text-sm text-grayText">
+                    Contact us to find your brand solution.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span
+                  class="w-9 h-9 rounded-full bg-orangeMain text-white flex items-center justify-center font-bold"
+                  >2</span
+                >
+                <div>
+                  <h4 class="font-bold">Consult</h4>
+                  <p class="text-sm text-grayText">
+                    Speak with our team and get clear answers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span
+                  class="w-9 h-9 rounded-full bg-orangeMain text-white flex items-center justify-center font-bold"
+                  >3</span
+                >
+                <div>
+                  <h4 class="font-bold">Place order</h4>
+                  <p class="text-sm text-grayText">
+                    Choose the service that works for you.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span
+                  class="w-9 h-9 rounded-full bg-orangeMain text-white flex items-center justify-center font-bold"
+                  >4</span
+                >
+                <div>
+                  <h4 class="font-bold">Payment</h4>
+                  <p class="text-sm text-grayText">
+                    Complete payment and we start working.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <button
+                class="bg-orangeMain text-white px-6 py-3 rounded-lg shadow hover:scale-105 transition"
+              >
+                Get Started
+              </button>
+              <button
+                class="border border-orangeMain text-orangeMain px-6 py-3 rounded-lg hover:bg-white transition"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AGENCY -->
+      <section
+        id="about"
+        class="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center fade-up"
+      >
+        <div>
+          <h2 class="text-3xl font-extrabold mb-5">
+            Our <span class="text-orangeMain">Agency</span>
+          </h2>
+          <p class="text-grayText leading-relaxed mb-7 max-w-md">
+            We believe in the power of data. Our analytics-driven approach
+            allows us to make informed decisions and optimize your marketing
+            efforts for maximum ROI. Let’s turn your data into actionable
+            insights.
+          </p>
+          <button
+            class="bg-orangeMain text-white px-6 py-3 rounded-lg shadow hover:scale-105 transition"
+          >
+            Read more
+          </button>
+        </div>
+
+        <div class="relative h-80">
+          <div class="absolute right-24 top-8 flex gap-3">
+            <div
+              class="w-20 h-16 bg-blue-500 rounded-lg shadow flex items-center justify-center text-white text-3xl"
+            >
+              📊
+            </div>
+            <div
+              class="w-20 h-16 bg-green-400 rounded-lg shadow flex items-center justify-center text-white text-3xl"
+            >
+              👀
+            </div>
+          </div>
+          <div
+            class="absolute right-36 top-28 w-32 h-20 bg-white shadow rounded-xl flex items-center justify-center text-3xl"
+          >
+            💻
+          </div>
+          <div class="absolute right-24 bottom-10 text-8xl float">🧑‍💼</div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section
+        id="blog"
+        class="max-w-5xl mx-auto px-6 py-16 fade-up overflow-hidden"
+      >
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold">What Clients Say!</h2>
+          <p class="text-grayText text-sm mt-3">
+            See how our digital marketing agency helped clients achieve their
+            goals.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="overflow-hidden">
+            <div id="testimonialTrack" class="testimonial-track flex gap-6">
+              <div
+                class="min-w-full sm:min-w-[48%] lg:min-w-[31.5%] bg-white rounded-xl shadow-lg p-6"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-11 h-11 rounded-full bg-peach flex items-center justify-center"
+                  >
+                    👩
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Sophia James</h4>
+                    <p class="text-xs text-grayText">Business Owner</p>
+                  </div>
+                </div>
+                <p class="text-sm text-grayText mb-4">
+                  BrandBuzz helped us grow our online reach and improve our
+                  sales.
+                </p>
+                <div class="text-orangeMain text-sm">★★★★★</div>
+              </div>
+
+              <div
+                class="min-w-full sm:min-w-[48%] lg:min-w-[31.5%] bg-white rounded-xl shadow-lg p-6"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-11 h-11 rounded-full bg-peach flex items-center justify-center"
+                  >
+                    👨
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Michael John</h4>
+                    <p class="text-xs text-grayText">Startup Founder</p>
+                  </div>
+                </div>
+                <p class="text-sm text-grayText mb-4">
+                  Their strategy gave our brand a fresh voice and better
+                  visibility.
+                </p>
+                <div class="text-orangeMain text-sm">★★★★☆</div>
+              </div>
+
+              <div
+                class="min-w-full sm:min-w-[48%] lg:min-w-[31.5%] bg-white rounded-xl shadow-lg p-6"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-11 h-11 rounded-full bg-peach flex items-center justify-center"
+                  >
+                    🧑
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Grace Smith</h4>
+                    <p class="text-xs text-grayText">Marketing Lead</p>
+                  </div>
+                </div>
+                <p class="text-sm text-grayText mb-4">
+                  Clean communication, strong ideas, and excellent delivery.
+                </p>
+                <div class="text-orangeMain text-sm">★★★★★</div>
+              </div>
+
+              <div
+                class="min-w-full sm:min-w-[48%] lg:min-w-[31.5%] bg-white rounded-xl shadow-lg p-6"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-11 h-11 rounded-full bg-peach flex items-center justify-center"
+                  >
+                    👩‍💼
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Linda Rose</h4>
+                    <p class="text-xs text-grayText">Product Manager</p>
+                  </div>
+                </div>
+                <p class="text-sm text-grayText mb-4">
+                  They made our campaign simple, clear, and very effective.
+                </p>
+                <div class="text-orangeMain text-sm">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="prevBtn"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-10 h-10 rounded-full bg-white shadow text-orangeMain"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            id="nextBtn"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-10 h-10 rounded-full bg-white shadow text-orangeMain"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="contact" class="max-w-4xl mx-auto px-6 py-8 fade-up">
+        <div
+          class="bg-orangeMain text-white rounded-xl px-8 py-6 flex flex-col sm:flex-row gap-5 justify-between items-center shadow-xl"
+        >
+          <h2 class="text-2xl font-bold">Ready to get started?</h2>
+          <button
+            class="border border-white px-6 py-2 rounded-lg hover:bg-white hover:text-orangeMain transition"
+          >
+            Contact Us
+          </button>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-peach pt-16">
+        <div
+          class="max-w-5xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-14"
+        >
+          <div>
+            <div class="flex items-center gap-2 font-bold mb-5">
+              <span
+                class="w-8 h-8 bg-orangeMain rounded-xl flex items-center justify-center text-white"
+              >
+                <i class="fa-solid fa-bullhorn text-sm"></i>
+              </span>
+              BrandBuzz
+            </div>
+
+            <div class="flex gap-3">
+              <a
+                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                class="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                class="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Company</h4>
+            <ul class="space-y-2 text-sm text-grayText">
+              <li>About</li>
+              <li>Contact</li>
+              <li>Careers</li>
+              <li>Team</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Designs</h4>
+            <ul class="space-y-2 text-sm text-grayText">
+              <li>Design contest</li>
+              <li>Hire a designer</li>
+              <li>Find a designer</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Resources</h4>
+            <ul class="space-y-2 text-sm text-grayText">
+              <li>Become a designer</li>
+              <li>Blog</li>
+              <li>Design school</li>
+              <li>Support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="footer-wave flex items-end justify-center pb-3 text-white text-xs"
+        >
+          All rights reserved 2026
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const fadeElements = document.querySelectorAll(".fade-up");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      fadeElements.forEach((el) => observer.observe(el));
+
+      const track = document.getElementById("testimonialTrack");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let currentSlide = 0;
+
+      function getCardWidth() {
+        const card = track.children[0];
+        return card.offsetWidth + 24;
+      }
+
+      function maxSlide() {
+        if (window.innerWidth >= 1024) return track.children.length - 3;
+        if (window.innerWidth >= 640) return track.children.length - 2;
+        return track.children.length - 1;
+      }
+
+      function updateSlider() {
+        track.style.transform = `translateX(-${currentSlide * getCardWidth()}px)`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentSlide = currentSlide >= maxSlide() ? 0 : currentSlide + 1;
+        updateSlider();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentSlide = currentSlide <= 0 ? maxSlide() : currentSlide - 1;
+        updateSlider();
+      });
+
+      window.addEventListener("resize", () => {
+        currentSlide = 0;
+        updateSlider();
+      });
+
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
